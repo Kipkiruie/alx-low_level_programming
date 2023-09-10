@@ -1,12 +1,22 @@
 #include <stdio.h>
 
-int main(void) {
-	printf("Size of int: %lu bytes\n", sizeof(int));
-       	printf("Size of char: %lu bytes\n", sizeof(char));
-	printf("Size of float: %lu bytes\n", sizeof(float));
-	printf("Size of double: %lu bytes\n", sizeof(double));
-	printf("Size of long: %lu bytes\n", sizeof(long));
-	printf("Size of short: %lu bytes\n", sizeof(short));
-	return 0;
-}
+/**
+ * main - A program that prints the size of various variable types
+ * Return: 0 (success)
+ */
+int main(void)
+{
+char a;
+int b;
+long int c;
+long long int d;
+float f;
 
+printf("Size of char: %zu bytes\n", sizeof(a));
+printf("Size of int: %zu bytes\n", sizeof(b));
+printf("Size of long int: %zu bytes\n", sizeof(c));
+printf("Size of long long int: %zu bytes\n", sizeof(d));
+printf("Size of float: %zu bytes\n", sizeof(f));
+
+return (0);
+}
