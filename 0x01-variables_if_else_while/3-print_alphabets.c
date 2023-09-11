@@ -1,25 +1,23 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
  * main - Entry point
- * Return: Always (Success)
+ * Return: Always ) (Success)
  */
+
 int main(void)
+
 {
-	char lowercase = 'a';
-	char uppercase = 'A';
+char low;
 
-    while (lowercase <= 'z');
-	{
-	putchar(lowercase);
-	lowercase++;
-    }
-    while (uppercase <= 'Z') {
-        putchar(uppercase);
-        uppercase++;
-    }
-    putchar('\n');
+for (low = 'a'; low <= 'z'; low++)
+putchar(low);
 
-    return 0;
+for (low = 'A'; low <= 'Z'; low++)
+putchar(low);
+putchar('\n');
+
+return (0);
 }
