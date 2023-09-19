@@ -1,25 +1,17 @@
-#include "main.h"
 /**
- * _atoi - converts a string to an integer
+ * _strlen - returns the length of a string
  *
- * @s: string input parameter
+ * @s: string parameter input
  *
- * Return: converted integer from string
+ * Return: length of string
 */
 
-int _atoi(char *s)
+int _strlen(char *s)
 {
-	unsigned int num = 0;
-	int sign = 1;
+	int counter;
 
-	do {
-		if (*s == '-')
-			sign *= -1;
-		else if (*s >= '0' && *s <= '9')
-			num = (num * 10) + (*s - '0');
-		else if (num > 0)
-			break;
-	} while (*s++);
+	for (counter = 0; *s != '\0'; ++s)
+		++counter;
 
-	return (num * sign);
+	return (counter);
 }
