@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * set _string - Entry point
+ * set_string - Entry point
  * @s: input
  * @to: input
  * Return: Always 0 (success)
