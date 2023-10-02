@@ -1,23 +1,35 @@
-include <stdio.h>
 /**
- * _strcmp - to compare two strings
- * @s1: first string to compare
- * @s2: second string to compare
- * Return: a comparison
- */
-int _strcmp(char *s1, char *s2)
+ * _strspn - a function that gets the
+ *           length of a prexif substring
+ *
+ * @s: pointer to string input
+ * @accept: substring prefix to look for
+ *
+ * Return: the number of bytes in the initial segment
+*/
+
+unsigned int _strspn(char *s, char *accept)
 {
-	int j;
+	int i, j, f;
 
-	j = 0;
-
-	while (s1[j] != '\0' && s2[j] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (s1[j] != s2[j])
+		j = 0;
+		f = 1; /*flag status*/
+		while (accept[j] != '\0')
 		{
-			return (s1[j] - s2[j]);
+			if (s[i] == accept[j])
+			{
+				f = 0; /*success*/
+				break;
+			}
+			j++;
 		}
-		j++;
+		if (f == 1)
+			break;
+		i++;
 	}
-	return (0);
+
+	return (i);
 }

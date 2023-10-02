@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 /**
  * _strchr - checks for c
  * @s: string to be checked

@@ -1,4 +1,4 @@
-nclude  <stdio.h>
+#include  <stdio.h>
 /**
  *  *_strpbrk - locates a string
  *  @s: string to look at

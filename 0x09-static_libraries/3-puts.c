@@ -1,10 +1,24 @@
-nclude <stdio.h>
+#include "main.h"
+
 /**
- * _puts - prints string
- * @str: string to be printed
- * return: always 1
- */
+ * _puts - print a string
+ *
+ * @str: string pointer
+ *
+ * Return: nothing
+*/
+
 void _puts(char *str)
 {
-	printf("%s\n", str);
+	int i;
+
+	for (i = 0; str[i] >= 0; i++)
+	{
+		if (str[i] == '\0')
+		{
+			_putchar('\n');
+			break;
+		}
+		_putchar(str[i]);
+	}
 }

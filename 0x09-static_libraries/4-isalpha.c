@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 /**
  * _isalpha - checks if alphabet is in caps
  * @c: input to be checked

@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 /**
  *  * _strncat - to return concatnated string
  *   * @dest: firsts string parameter

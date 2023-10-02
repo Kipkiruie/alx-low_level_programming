@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 /**
  * _atoi - truns a  string to integer
  * @s: string to be integered
