@@ -1,35 +1,46 @@
+#include <stdio.h>
 /**
- * _strspn - a function that gets the
- *           length of a prexif substring
- *
- * @s: pointer to string input
- * @accept: substring prefix to look for
- *
- * Return: the number of bytes in the initial segment
+* puts2 - prints every string
+* @str: input parameter
+* Return: always 1
 */
-
+void puts2(char *str)
+ * _strspn - counts number of bytes in s
+ * @s: bytes to be cheked
+ * @accept: where to start counting
+ * Return: number of bytes in s
+ */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, f;
+	int i;
+	unsigned int num = 0;
+	int is_checked;
+	char *main_accept = accept;
 
-	i = 0;
-	while (s[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
+	while (*s != '\0')
 	{
-		j = 0;
-		f = 1; /*flag status*/
-		while (accept[j] != '\0')
+		is_checked = 0;
+
+		if (i % 2 == 0)
+		putchar(str[i]);
+		while (*accept != '\0')
 		{
-			if (s[i] == accept[j])
+			if (*s == *accept)
 			{
-				f = 0; /*success*/
+				is_checked = 1;
 				break;
 			}
-			j++;
+			accept++;
 		}
-		if (f == 1)
+		if (is_checked == 0)
+		{
 			break;
-		i++;
+		}
+		num++;
+		accept = main_accept;
+		s++;
 	}
-
-	return (i);
+	putchar ('\n');
+	return (num);
 }
