@@ -1,35 +1,47 @@
 /**
- * _strspn - a function that gets the
- *           length of a prexif substring
+ * _strcmp - a function that compares two strings
  *
- * @s: pointer to string input
- * @accept: substring prefix to look for
+ * @s1: string 1 input to compare
+ * @s2: against this other string 2
  *
- * Return: the number of bytes in the initial segment
+ * Return: 0 if s1 and s2 are equal
+ *        negative integer if the stopping character
+ *                in @s1 was less than the stopping
+ *                character in @s2
+ *        positive integer if the stopping character
+ *                in @s1 was greater than the stopping
+ *                character in @s2
 */
 
-unsigned int _strspn(char *s, char *accept)
+int _strcmp(char *s1, char *s2)
 {
-	int i, j, f;
+	int i = 0, r;
 
-	i = 0;
-	while (s[i] != '\0')
+	/**
+	 * iterate through src and
+	 * compare it with dest
+	*/
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		j = 0;
-		f = 1; /*flag status*/
-		while (accept[j] != '\0')
+		/**
+		 * if they differ by a single character
+		 * don't iterate further
+		*/
+		if (s1[i] != s2[i])
 		{
-			if (s[i] == accept[j])
-			{
-				f = 0; /*success*/
-				break;
-			}
-			j++;
-		}
-		if (f == 1)
+			/*
+			 * return the difference between
+			 * the two characters
+			*/
+			r = s1[i] - s2[i];
 			break;
+		}
+		else
+		{
+			r = s1[i] - s2[i];
+		}
 		i++;
 	}
 
-	return (i);
+	return (r);
 }
