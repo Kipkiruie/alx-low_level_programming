@@ -1,10 +1,10 @@
-#include "holberton.h"
+#include "stdio.h"
 #include"main.h"
 
 /**
  * print_most_numbers - print 0 - 9 apart
 @@ -9,15 +9,13 @@
-
+*/
 void print_most_numbers(void)
 {
 	int i;
