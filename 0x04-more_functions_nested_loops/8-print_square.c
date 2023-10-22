@@ -1,10 +1,9 @@
-#include "holberton.h"
 #include"main.h"
 
 /**
  * print_square - print a square using the character #
 @@ -10,23 +10,12 @@
-
+*/
 void print_square(int size)
 {
 	int c, r;
