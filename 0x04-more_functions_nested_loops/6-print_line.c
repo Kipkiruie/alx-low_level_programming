@@ -1,10 +1,9 @@
-#include "holberton.h"
 #include"main.h"
 
 /**
  * print_line - print a straight line
 @@ -9,18 +9,14 @@
-
+*/
 void print_line(int n)
 {
 	int i;
