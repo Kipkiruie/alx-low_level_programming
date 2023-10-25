@@ -1,21 +1,34 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - get node at *index nth from a linked list
+ * pop_listint - deletes head of the node
  *
- * @head: pointer to the first node of the list
- * @index: no of node to access
+ * @head: pointer to the first node in the list
  *
- * Return: node at nth index OR NULL if node doesn't exist
+ * Return: the head's node's data (n)
 */
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+int pop_listint(listint_t **head)
 {
-	unsigned int i;
+	int first_node;
+	listint_t *temp, *next;
 
-	/*iterate thorugh nodes in list till the index nth node*/
-	for (i = 0; i < index && head != NULL; i++)
-		head = head->next;
+	/*if list is empty return 0*/
+	if (*head == NULL)
+		return (0);
 
-	/*return head*/
-	return (head);
+	/*set head addr to temp*/
+	temp = *head;
+	/*get addr of next node*/
+	next = temp->next;
+	/*get element of first node*/
+	first_node = temp->n;
+
+	/*free first node*/
+	free(temp);
+
+	/*set head to second node*/
+	*head = next;
+
+	/*return element of first node*/
+	return (first_node);
 }
