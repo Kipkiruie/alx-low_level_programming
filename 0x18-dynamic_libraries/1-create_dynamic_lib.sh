@@ -1,4 +1,10 @@
 #!/bin/bash
-gcc -wall -wextra -werror -pedantic -c -fPIC *.c
+
+#Compile source files to generate position-independent object files
+gcc -c -fPIC *.c
+
+#Create a shared library using the generated object files
 gcc -shared -o liball.so *.o
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+#Clean up object files
+rm *.o
